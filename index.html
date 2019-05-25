@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,31 +10,39 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <h1 class="gameTitle">Crystals Collector</h1>
-    </div>
-    <div>
-        <p>You will be given a random number at the start of the game.</p>
-        <p>There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score.</p>
-        <p>You win the game by matching your total score to the random number. You lose the game if your total score goes above the random number.</p>
-        <p>The value of each crystal is hidden from you until you click on it.</p>
-        <p>Each time when the game starts, the game will change the value of each crystal.</p>
-    </div>
-    <div class="numberScoreBox">
-        <div class="randomNumber">
+    <div class="container">
+        <div class="row bg-danger text-white">
+            <h1 id="gameTitle">Crystals Collector</h1>
         </div>
-        <div class="scoreboard">
+        <div class="row bg-warning text-success">
+            <p>You will be given a random number at the start of the game.</p>
+            <p>There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score.</p>
+            <p>You win the game by matching your total score to the random number. You lose the game if your total score goes above the random number.</p>
+            <p>The value of each crystal is hidden from you until you click on it.</p>
+            <p>Each time when the game starts, the game will change the value of each crystal.</p>
         </div>
-    </div>
+        <div class="row">
+            <div class="col-md-9 bg-success text-dark" id="randomNumber">
+                abcd
+            </div>
+            <div class="col-md-3 bg-primary text-dark" id="scoreboard">
+                abcvd
+            </div>
+        </div>
 
-    <div class="crystalContainer">
-    </div>
+        <div class="row">
+            <img src="" alt="Crystal1">
+            <img src="" alt="Crystal2">
+            <img src="" alt="Crystal3">
+            <img src="" alt="Crystal4">
+        </div>
 
-    <div>
-        <p>Your total score is: </p>
-    </div>
-    <div>
-        <p id="totalScore"></p>
+        <div class="row bg-info text-white">
+            <p>Your total score is: </p>
+        </div>
+        <div class="row bg-info text-white">
+            <p id="totalScore"></p>
+        </div>
     </div>
 </body>
 <script src="assets/javascript/game.js"></script>

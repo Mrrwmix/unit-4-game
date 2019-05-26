@@ -36,14 +36,12 @@ function valueRandomizer() {
 }
 
 valueRandomizer();
-console.log(hiddenValues);
 
 // Assigning a random value to each crystal-image
 
 function crystalValues(){
     $(".crystal-image").each(function(index){
         $(this).attr("data-crystalvalue", hiddenValues[index]);
-        console.log($(this).attr("data-crystalvalue"));
     })
 }
 

@@ -1,10 +1,24 @@
 // Variables
 
-var targetNumber = Math.floor(Math.random() * 101) + 19;
+var targetNumber;
 var counter = 0;
 var hiddenValues = [];
 var wins = 0;
 var losses = 0;
+
+// Starting Text
+
+function rewriter(){
+    counter = 0;
+    hiddenValues = [];
+    targetNumber = Math.floor(Math.random() * 101) + 19;
+    $("#totalScore").text(counter);
+    $("#winnies").text(wins);
+    $("#lossies").text(losses);
+    $("#randomNumber").text(targetNumber);
+}
+
+rewriter();
 
 // Randomizing hiddenValues indices
 
@@ -36,5 +50,26 @@ function crystalValues(){
 crystalValues();
 
 
-
 // on click
+
+$(".crystal-image").on("click", function(){
+    var crystalAddend = $(this).attr("data-crystalvalue");
+    crystalAddend = parseInt(crystalAddend);
+    counter += crystalAddend;
+    $("#totalScore").text(counter);
+
+    if (counter === targetNumber){
+        wins++;
+        valueRandomizer();
+        crystalValues();
+        rewriter();
+        $("#totalScore").text("You won!");
+    }
+    else if (counter > targetNumber){
+        losses++;
+        valueRandomizer();
+        crystalValues();
+        rewriter();
+        $("#totalScore").text("You lost!");
+    }
+})
